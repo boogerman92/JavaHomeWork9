@@ -27,13 +27,13 @@ public class Radio {
         }
     }
 
-    public void prevRadioStation(){
-        if (currentRadioStation < 10){
-            currentRadioStation = currentRadioStation - 1;
-        }
-        if (currentRadioStation < 0){
+    public int prevRadioStation(){
+        if (currentRadioStation <= 0){
             currentRadioStation = 9;
+        } else {
+            currentRadioStation = currentRadioStation -1;
         }
+        return currentRadioStation;
     }
 
     public int currentVolume;
@@ -43,9 +43,13 @@ public class Radio {
     }
 
     public void setCurrentVolume(int newCurrentVolume){
-        if (newCurrentVolume < 0){
+        if (newCurrentVolume <= 0){
             return;
         }
+        if (newCurrentVolume > 10){
+            return;
+        }
+
         currentVolume = newCurrentVolume;
     }
 
@@ -53,18 +57,16 @@ public class Radio {
         if (currentVolume < 10){
             currentVolume = currentVolume + 1;
         }
-        if (currentVolume >= 10){
-            currentVolume = 10;
-        }
+
     }
 
-    public void reductionVolume(){
-        if (currentVolume <= 10){
-            currentVolume = currentVolume - 1;
-        }
+    public int reductionVolume(){
         if (currentVolume <= 0){
             currentVolume = 0;
+        } else {
+            currentVolume = currentVolume - 1;
         }
+        return currentVolume;
     }
 
 }

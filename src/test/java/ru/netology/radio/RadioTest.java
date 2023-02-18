@@ -131,6 +131,19 @@ public class RadioTest {
     }
 
     @Test
+    public void shouldPrevNineRadioStation(){
+        Radio rad = new Radio();
+        rad.setCurrentRadioStation(9);
+
+        rad.prevRadioStation();
+
+        int expected = 8;
+        int actual = rad.getCurrentRadioStation();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
     public void shouldIncreaseVolume(){
         Radio vol = new Radio();
         vol.setCurrentVolume(5);
@@ -146,7 +159,7 @@ public class RadioTest {
     @Test
     public void shouldIncreaseTenVolume(){
         Radio vol = new Radio();
-        vol.setCurrentVolume(11);
+        vol.setCurrentVolume(10);
 
         vol.increaseVolume();
 
@@ -155,6 +168,7 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
 
     @Test
     public void shouldSetNegativesVolume(){
@@ -183,9 +197,22 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldReductionZeroVolume(){
+    public void shouldReductionTenVolume(){
         Radio vol = new Radio();
-        vol.setCurrentVolume(0);
+        vol.setCurrentVolume(10);
+
+        vol.reductionVolume();
+
+        int expected = 9;
+        int actual = vol.getCurrentVolume();
+
+        Assertions.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void shouldReductionOverVolume(){
+        Radio vol = new Radio();
+        vol.setCurrentVolume(11);
 
         vol.reductionVolume();
 
