@@ -70,7 +70,7 @@ public class RadioTest {
         Radio rad = new Radio();
         rad.setCurrentRadioStation(4);
 
-        rad.nextRadioStation();
+        rad.NextRadioStation();
 
         int expected = 5;
         int actual = rad.getCurrentRadioStation();
@@ -83,7 +83,7 @@ public class RadioTest {
         Radio rad = new Radio();
         rad.setCurrentRadioStation(9);
 
-        rad.nextRadioStation();
+        rad.NextRadioStation();
 
         int expected = 0;
         int actual = rad.getCurrentRadioStation();
@@ -96,7 +96,7 @@ public class RadioTest {
         Radio rad = new Radio();
         rad.setCurrentRadioStation(6);
 
-        rad.prevRadioStation();
+        rad.PrevRadioStation();
 
         int expected = 5;
         int actual = rad.getCurrentRadioStation();
@@ -109,7 +109,7 @@ public class RadioTest {
         Radio rad = new Radio();
         rad.setCurrentRadioStation(0);
 
-        rad.prevRadioStation();
+        rad.PrevRadioStation();
 
         int expected = 9;
         int actual = rad.getCurrentRadioStation();
@@ -122,7 +122,7 @@ public class RadioTest {
         Radio rad = new Radio();
         rad.setCurrentRadioStation(1);
 
-        rad.prevRadioStation();
+        rad.PrevRadioStation();
 
         int expected = 0;
         int actual = rad.getCurrentRadioStation();
@@ -135,7 +135,7 @@ public class RadioTest {
         Radio rad = new Radio();
         rad.setCurrentRadioStation(9);
 
-        rad.prevRadioStation();
+        rad.PrevRadioStation();
 
         int expected = 8;
         int actual = rad.getCurrentRadioStation();
