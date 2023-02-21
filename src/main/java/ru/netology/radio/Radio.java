@@ -23,7 +23,7 @@ public class Radio {
         currentRadioStation = newCurrentRadioStation;
     }
 
-    public void NextRadioStation(){
+    public void nextRadioStation(){
 
         if (currentRadioStation < 9){
             currentRadioStation = currentRadioStation + 1;
@@ -33,7 +33,7 @@ public class Radio {
         }
     }
 
-    public int PrevRadioStation(){
+    public int prevRadioStation(){
         if (currentRadioStation <= 0){
             currentRadioStation = 9;
         } else {
