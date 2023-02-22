@@ -92,6 +92,19 @@ public class RadioTest {
     }
 
     @Test
+    public void shouldNextEightRadioStation(){
+        Radio rad = new Radio();
+        rad.setCurrentRadioStation(8);
+
+        rad.nextRadioStation();
+
+        int expected = 9;
+        int actual = rad.getCurrentRadioStation();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
     public void shouldPrevRadioStation(){
         Radio rad = new Radio();
         rad.setCurrentRadioStation(6);
@@ -231,6 +244,18 @@ public class RadioTest {
         int actual = vol.getCurrentVolume();
 
         Assertions.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void shouldSetOverRadioStation(){
+        Radio rad = new Radio();
+
+        rad.setCurrentRadioStation(10);
+
+        int expected = 0;
+        int actual = rad.getCurrentRadioStation();
+
+        Assertions.assertEquals(expected, actual);
     }
 
 }
